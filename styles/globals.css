@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-bg: #eef0f1;
+  --color-text: #08090a;
+  --color-blue: #3b49df;
+  --color-red: #df3b3b;
+  --color-green: #3bdf72;
+  --color-gray: #b5bdc4;
+}
+
 html,
 body {
   padding: 0;
@@ -79,4 +88,47 @@ a {
 
 .navbar li {
   border-radius: 50%;
+}
+
+.btn,
+button {
+  background-color: var(--color-gray);
+  border: none;
+  color: var(--color-text);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin: 0.5rem 1rem 0.5rem 0;
+}
+
+@media only screen and (max-width: 768px) {
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+button.btn-google {
+  background-color: white;
+  color: var(--color-text);
+}
+
+.btn-google img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+button.btn-logo {
+  background-color: var(--color-text);
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
 }
