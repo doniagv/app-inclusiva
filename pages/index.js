@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <div>
       {/* <Loader show /> */}
-      <Link prefetch={false} href={{ pathname: "/[username]", query: { username: "doniagv" } }}>
+      {/* <Link prefetch={false} href={{ pathname: "/[username]", query: { username: "doniagv" } }}>
         <a>Doniagv Profile</a>
-      </Link>
+      </Link> */}
     </div>
   );
 }
