@@ -13,14 +13,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap");
 
-:root {
-  --color-bg: #eef0f1;
-  --color-text: #08090a;
-  --color-blue: #3b49df;
-  --color-red: #df3b3b;
-  --color-green: #3bdf72;
-  --color-gray: #b5bdc4;
-}
 html,
 body {
   padding: 0;
@@ -173,6 +165,7 @@ button.btn-login-company {
 
 .btn-login-company img {
   width: 30px;
+  height: 30px;
   margin-right: 10px;
 }
 

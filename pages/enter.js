@@ -11,7 +11,7 @@ export default function Enter(props) {
   // 3. user signed in, has username <SignOutButton />
   return (
     <main>
-      <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex min-h-screen justify-center py-12 px-4 sm:px-6 lg:px-8">
         {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
       </div>
     </main>
@@ -38,6 +38,9 @@ function SignInButton() {
 
   return (
     <div className="flex flex-col">
+      <h1 className="text-center text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-gray-900 mb-4">
+        Inicio de sesión
+      </h1>
       <button
         className="btn-login-company text-black focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
         onClick={signInWithGoogle}>
@@ -126,7 +129,7 @@ function UsernameForm() {
   return (
     !username && (
       <section>
-        <h3>Elegir un Nombre de Usuario</h3>
+        <h3>Elige un Nombre de Usuario</h3>
         <form onSubmit={onSubmit}>
           <input name="username" placeholder="" value={formValue} onChange={onChange} />
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
