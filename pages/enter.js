@@ -1,4 +1,4 @@
-import { auth, googleAuthProvider, firestore } from "../lib/firebase";
+import { auth, googleAuthProvider, firestore, facebookAuthProvider } from "../lib/firebase";
 import { useContext, useState, useEffect, useCallback } from "react";
 import debounce from "lodash.debounce";
 import { UserContext } from "../lib/context";
@@ -26,18 +26,29 @@ export default function Enter(props) {
   );
 }
 
-// Sign in with Google button
+// Sign in Button
 function SignInButton() {
   const signInWithGoogle = async () => {
     await auth.signInWithPopup(googleAuthProvider);
   };
 
+  const signInWithFacebook = async () => {
+    await auth.signInWithPopup(facebookAuthProvider);
+  };
+
   return (
-    <button
-      className="btn-google text-black focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-      onClick={signInWithGoogle}>
-      <img src={"/google.png"} /> Inicio de Sesión con Google
-    </button>
+    <div className="flex flex-col">
+      <button
+        className="btn-login-company text-black focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        onClick={signInWithGoogle}>
+        <img alt="google" src={"/google.png"} /> Inicio de Sesión con Google
+      </button>
+      <button
+        className="btn-login-company text-black focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+        onClick={signInWithFacebook}>
+        <img alt="facebook" src={"/facebook.png"} /> Inicio de Sesión con Facebook
+      </button>
+    </div>
   );
 }
 
