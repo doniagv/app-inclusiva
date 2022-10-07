@@ -11,7 +11,7 @@ export default function Enter(props) {
   // 3. user signed in, has username <SignOutButton />
   return (
     <main>
-      <div className="flex min-h-screen justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex min-h-full justify-center py-12 px-4 sm:px-6 lg:px-8">
         {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
       </div>
     </main>
@@ -139,15 +139,6 @@ function UsernameForm() {
             disabled={!isValid}>
             Elegir nombre de usuario
           </button>
-
-          {/* <h3>Debug State</h3>
-          <div>
-            Username: {formValue}
-            <br />
-            Loading: {loading.toString()}
-            <br />
-            Username Valid: {isValid.toString()}
-          </div> */}
         </form>
       </section>
     )

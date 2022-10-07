@@ -11,8 +11,6 @@ import Image from "next/image";
 export default function Navbar() {
   const { user, username } = useContext(UserContext);
 
-  console.log("user", user);
-
   const router = useRouter();
 
   const signOut = () => {
