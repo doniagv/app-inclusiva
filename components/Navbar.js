@@ -33,7 +33,7 @@ export default function Navbar() {
         {username && (
           <>
             <li>
-              <Link href="/admin">
+              <Link href="/catalogo">
                 <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                   Cátalogo de juegos
                 </button>
@@ -46,7 +46,6 @@ export default function Navbar() {
                 Sign Out
               </button>
             </li>
-
             <li>
               <Link href={`/${username}`}>
                 <img alt="Profile" src={user?.photoURL || "/hacker.png"} />

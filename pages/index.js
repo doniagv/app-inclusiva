@@ -7,11 +7,11 @@ import Loader from "../components/Loader";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       {/* <Loader show /> */}
       {/* <Link prefetch={false} href={{ pathname: "/[username]", query: { username: "doniagv" } }}>
         <a>Doniagv Profile</a>
       </Link> */}
-    </div>
+    </main>
   );
 }
