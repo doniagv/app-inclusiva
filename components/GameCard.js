@@ -13,8 +13,10 @@ export default function GameCard({ juego }) {
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{juego.descripcion}</p>
         <a
           href={juego.url}
+          rel="noreferrer"
+          target="_blank"
           className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-          Descargar
+          Jugar o Descargar
         </a>
         <p className="inline-flex items-center ml-3 py-2 px-3 text-sm font-medium text-center text-white bg-teal-900 rounded-lg hover:bg-teal-900 focus:ring-4 focus:outline-none focus:ring-teal-300 dark:bg-teal-600 dark:hover:bg-teal-700 dark:focus:ring-teal-800">
           {juego.tipo}
