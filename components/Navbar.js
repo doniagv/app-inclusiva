@@ -3,7 +3,6 @@ import { auth } from "../lib/firebase";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { UserContext } from "../lib/context";
-import Image from "next/image";
 
 // import { auth } from "@lib/firebase";
 
