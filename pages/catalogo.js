@@ -35,7 +35,7 @@ export default function Catalogo(props) {
     const getGamesInfo = async () => {
       console.log(process.env.API_KEY);
       axios
-        .get(`https://itch.io/api/1/${process.env.API_KEY}/my-games`)
+        .get(`https://itch.io/api/1/${"nFs3B4Z7Z7p3OBHGLJWXERWBpyPTPSZbOiBWdX5r"}/my-games`)
         .then(function (response) {
           // handle success
           console.log(response);
