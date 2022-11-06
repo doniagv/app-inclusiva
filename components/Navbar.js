@@ -8,7 +8,7 @@ import { UserContext } from "../lib/context";
 
 // Top navbar
 export default function Navbar() {
-  const { user, username } = useContext(UserContext);
+  const { user, username, roles } = useContext(UserContext);
 
   const router = useRouter();
 
@@ -38,13 +38,15 @@ export default function Navbar() {
                 </button>
               </Link>
             </li>
-            <li>
-              <Link href="/dashboard">
-                <button className="text-white bg-gradient-to-r from-orange-500 to-pink-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                  Dashboard
-                </button>
-              </Link>
-            </li>
+            {username && roles && roles.includes("admin") ? (
+              <li>
+                <Link href="/dashboard">
+                  <button className="text-white bg-gradient-to-r from-orange-500 to-pink-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Dashboard
+                  </button>
+                </Link>
+              </li>
+            ) : null}
             <li className="push-left">
               <button
                 className="text-black focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"

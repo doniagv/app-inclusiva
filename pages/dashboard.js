@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../lib/context";
 
 export default function Dashboard(props) {
-  const { user, username } = useContext(UserContext);
+  const { user, username, roles } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
   const [gamesInfo, setGamesInfo] = useState(null);
@@ -35,7 +35,7 @@ export default function Dashboard(props) {
 
   return (
     <>
-      {username ? (
+      {user && roles && roles.includes("admin") ? (
         <main>
           <h1 className="text-center">Dashboard</h1>
           {!loading ? (
