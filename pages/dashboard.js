@@ -7,17 +7,6 @@ export default function Dashboard(props) {
 
   const [gamesInfo, setGamesInfo] = useState(null);
 
-  //   useEffect(() => {
-  //     const getJuegos = async () => {
-  //       const gamesQuery = firestore.collectionGroup("juegos").where("publicado", "==", true).orderBy("titulo", "desc");
-
-  //       const juegos = (await gamesQuery.get()).docs.map(postToJSON);
-  //       setJuegos(juegos);
-  //     };
-
-  //     getJuegos();
-  //   }, []);
-
   useEffect(() => {
     const getGamesInfo = async () => {
       setLoading(true);
