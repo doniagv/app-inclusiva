@@ -6,9 +6,9 @@ import { UserContext } from "../lib/context";
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
-  // 1. user signed out <SignInButton />
-  // 2. user signed in, but missing username <UsernameForm />
-  // 3. user signed in, has username <SignOutButton />
+  // 1. El usuario no tiene sesión iniciada, muestra <SignInButton />
+  // 2. El usuario inició sesión, pero no tiene username, muestra <UsernameForm />
+  // 3. El usuario inició sesión y tiene username, muestra <SignOutButton />
   return (
     <main>
       <div className="flex min-h-full justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -28,6 +28,7 @@ export default function Enter(props) {
 
 // Sign in Button
 function SignInButton() {
+  // Se manejan métodos de autenticación de Google y Facebook con métodos de Firebase Auth
   const signInWithGoogle = async () => {
     await auth.signInWithPopup(googleAuthProvider);
   };
@@ -57,6 +58,7 @@ function SignInButton() {
 
 // Sign out button
 function SignOutButton() {
+  // Se usa método de firebase para cerrar sesión
   return (
     <button
       className="text-black focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
@@ -107,18 +109,16 @@ function UsernameForm() {
     }
   };
 
-  //
-
   useEffect(() => {
     checkUsername(formValue);
   }, [formValue]);
 
+  // Checa si el username ya está ocupado por otro usuario guardado en firebase
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3) {
         const ref = firestore.doc(`usernames/${username}`);
         const { exists } = await ref.get();
-        console.log("Firestore read executed!");
         setIsValid(!exists);
         setLoading(false);
       }

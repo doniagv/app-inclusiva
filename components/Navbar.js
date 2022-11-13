@@ -6,9 +6,10 @@ import { UserContext } from "../lib/context";
 
 // import { auth } from "@lib/firebase";
 
-// Top navbar
+// Navbar principal responsivo
 export default function Navbar() {
-  const { user, username, roles } = useContext(UserContext);
+  // Se toman del contexto general de la app, el username y roles del usuario autenticado
+  const { username, roles } = useContext(UserContext);
 
   const [openNav, setOpenNav] = useState(false);
 
@@ -26,6 +27,8 @@ export default function Navbar() {
   const changeOpenNav = () => {
     setOpenNav(!openNav);
   };
+
+  // Para mostrar opcion de dashboard el usuario tiene que tener role de admin
 
   return (
     <nav className="navbar">

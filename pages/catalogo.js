@@ -1,4 +1,4 @@
-import { firestore, postToJSON, fromMillis } from "../lib/firebase";
+import { firestore, docToJSON, fromMillis } from "../lib/firebase";
 import GameCard from "../components/GameCard";
 
 import { useState, useEffect } from "react";
@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 // export async function getServerSideProps(context) {
 //   const gamesQuery = firestore.collectionGroup("juegos").where("publicado", "==", true).orderBy("titulo", "desc");
 
-//   const juegos = (await gamesQuery.get()).docs.map(postToJSON);
+//   const juegos = (await gamesQuery.get()).docs.map(docToJSON);
 
 //   console.log("juegos");
 //   return {
@@ -22,7 +22,7 @@ export default function Catalogo(props) {
     const getJuegos = async () => {
       const gamesQuery = firestore.collectionGroup("juegos").where("publicado", "==", true).orderBy("titulo", "desc");
 
-      const juegos = (await gamesQuery.get()).docs.map(postToJSON);
+      const juegos = (await gamesQuery.get()).docs.map(docToJSON);
       setJuegos(juegos);
     };
 
