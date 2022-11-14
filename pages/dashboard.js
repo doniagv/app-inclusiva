@@ -1,12 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../lib/context";
 
+// Componente para mostrar el dashboard sobre estadísticas de los juegos
 export default function Dashboard(props) {
-  const { user, username, roles } = useContext(UserContext);
+  const { username, roles } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
   const [gamesInfo, setGamesInfo] = useState(null);
 
+  // Se hace fetch con la api cuando se carga el componente Dashbord y la información se guarda en el state
   useEffect(() => {
     const getGamesInfo = async () => {
       setLoading(true);
@@ -21,10 +23,10 @@ export default function Dashboard(props) {
 
     getGamesInfo();
   }, []);
-
+  // Se revisa que el usuario tenga el role de admin para poder ver el dashboard
   return (
     <>
-      {user && roles && roles.includes("admin") ? (
+      {username && roles && roles.includes("admin") ? (
         <main>
           <h1 className="text-center">Dashboard</h1>
           {!loading ? (

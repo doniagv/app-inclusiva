@@ -14,6 +14,7 @@ import { useState, useEffect } from "react";
 //   };
 // }
 
+// Se hace query ha firebase para obtener los juegos publicados
 export default function Catalogo(props) {
   const [juegos, setJuegos] = useState(props.juegos);
   const [loading, setLoading] = useState(props.false);
@@ -29,6 +30,7 @@ export default function Catalogo(props) {
     getJuegos();
   }, []);
 
+  //Se usa el componente GameCard para mostrar cada juego con su foto e información
   return (
     <main>
       <h1 className="text-center">Catálogo de Juegos</h1>
