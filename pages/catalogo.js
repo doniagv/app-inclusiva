@@ -37,14 +37,14 @@ export default function Catalogo(props) {
   //Se usa el componente GameCard para mostrar cada juego con su foto e información
   return (
     <main>
-      <h1 className="text-center">Catálogo de Juegos</h1>
+      <h1 className="mt-6 text-center">Catálogo de Juegos</h1>
       {username || (roles && (roles.includes("Usuario") || roles.includes("admin"))) ? (
-        <div className="flex flex-wrap gap-6 justify-center mt-5">
+        <div className="mt-6 flex flex-wrap gap-6 justify-center mt-5">
           {juegos ? juegos.map((juego) => <GameCard juego={juego} key={juego.titulo} />) : null}
         </div>
       ) : (
         <div
-          className="flex p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
+          className="mt-6 flex p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
           role="alert">
           <svg
             aria-hidden="true"
