@@ -3,15 +3,14 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
+import { Hero } from "../components/Hero";
+
 import Loader from "../components/Loader";
 
 export default function Home() {
   return (
     <main>
-      {/* <Loader show /> */}
-      {/* <Link prefetch={false} href={{ pathname: "/[username]", query: { username: "doniagv" } }}>
-        <a>Doniagv Profile</a>
-      </Link> */}
+      <Hero />
     </main>
   );
 }

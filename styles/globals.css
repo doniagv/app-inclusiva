@@ -20,12 +20,11 @@ body {
   font-family: "Noto Sans", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  margin-top: 50px;
 }
 
-main {
-  padding: 1rem 10vw;
-}
+/* main {
+  padding: 0 1rem 0 10vw;
+} */
 
 h1 {
   font-size: 2rem;
