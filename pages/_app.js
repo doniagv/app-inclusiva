@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import { UserContext } from "../lib/context";
 import { useRouter } from "next/router";
 
+import { Analytics } from "@vercel/analytics/react";
+
 // Libreriía para google analytics
 import * as ga from "../lib/ga";
 
@@ -35,6 +37,7 @@ function MyApp({ Component, pageProps }) {
     <UserContext.Provider value={userData}>
       <Navbar />
       <Component {...pageProps} />
+      <Analytics />
     </UserContext.Provider>
   );
 }
