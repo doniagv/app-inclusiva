@@ -27,11 +27,11 @@ export default function Dashboard(props) {
   return (
     <>
       {username && roles && roles.includes("admin") ? (
-        <main>
+        <main className="flex flex-col">
           <h1 className="text-center">Dashboard</h1>
           {!loading ? (
-            <div className="mt-5 overflow-x-auto relative shadow-md sm:rounded-lg">
-              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <div className="flex self-center w-9/12 mt-5 overflow-x-auto relative ">
+              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 shadow-md rounded-lg">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
                     <th scope="col" className="py-3 px-6">
@@ -80,6 +80,30 @@ export default function Dashboard(props) {
               <span class="sr-only">Loading...</span>
             </div>
           )}
+          <div class="mt-10 flex w-9/12 self-center items-center bg-orange-500 rounded-lg shadow sm:flex">
+            <div class="p-5">
+              <h3 class="text-xl font-bold tracking-tight text-white">
+                <a href="#">Google Analytics</a>
+              </h3>
+              <p class="mt-3 mb-4 font-light text-white">
+                Para revisar más estadísticas de la página, por favor visita google analytics
+              </p>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://console.firebase.google.com/u/0/project/apps-inclusivas/analytics/app/web:NzZjODIxMTQtYTkzMi00MjMxLWJiZjMtMzliYWQ2Y2VmMGUz/overview/~2F%3Ft%3D1669424507389&fpn%3D729212998190&swu%3D1&sgu%3D1&sus%3Dupgraded&cs%3Dapp.m.dashboard.overview&g%3D1">
+                <button className="bg-gray-700 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900">
+                  Ver estadísticas
+                </button>
+                {/* <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"></path>
+            </svg> */}
+              </a>
+            </div>
+          </div>
         </main>
       ) : (
         <h1 className="text-center">No tienes los permisos necesarios</h1>

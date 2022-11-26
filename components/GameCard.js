@@ -6,7 +6,15 @@ export default function GameCard({ juego }) {
   return (
     <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
-        <img className="rounded-t-lg" src={juego.image} alt="juego" />
+        <img
+          className="rounded-t-lg"
+          src={
+            juego.image && juego.image != ""
+              ? juego.image
+              : "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+          }
+          alt="juego"
+        />
       </a>
       <div className="p-5">
         <a href="#">
